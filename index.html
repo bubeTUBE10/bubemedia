@@ -20,6 +20,13 @@
     text-align: center;
   } 
 
+  form {
+    color: red;
+    margin-left: 0px;
+    font-size: 20px;
+    text-align: center;
+  } 
+
   a {
     color: green;
     margin-left: 0px;
@@ -31,7 +38,23 @@
 </head>
 <body>
   <h1>Welcome to bubemedia!</h1>
-  <p>Trust us with all your tech needs</p>
+  <p>Trust us with all your tech needs<br>Sign up today:</p>
+  <form>
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname" placeholder="Jagmeet" required><br>
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname" placeholder="Singh" required><br><br>
+    <label for="phone">Enter a phone number:</label><br>
+    <input type="tel" id="phone" name="phone" placeholder="123-45-678" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required><br><br>
+    <label for="country">Country:</label>
+    <select id="country" name="country">
+      <option value="Rwanda">Rwanda</option>
+      <option value="DPRK">DPRK</option>
+      <option value="Yemen">Yemen</option>
+      <option value="Lybia">Lybia</option>
+    </select><br><br>
+    <button type="submit" onclick="alert('Submitted to FBI')">Submit</button>
+  </form>
   <a href="page1.html">Clickherenovirusgaranteed.exe</a>
   <br>
   <img src="images/call22.jpg" alt="Italian Trulli">
