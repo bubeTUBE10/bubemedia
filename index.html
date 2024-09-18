@@ -1,62 +1,119 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <style>
-  body {
-    background-color: black;
-  }
+  <head>
+    <script>
+      function alertbutton() {
+        alert("Submitted to FBI");
+        console.log(Hello);
+      }
+      function displayMessage() {
+        var message =
+          "c9edf3de3684a7824910b699273e03dedde2be4dfa444b91e16b73fb4d0c61a2";
+        document.getElementById("p2").innerHTML = message;
+      }
+      function toggle() {
+        var x = document.getElementById("p3");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+      }
+      function changeSrc() {
+        document.getElementById("techsupport").src = "images/hacker.jpg";
+      }
+    </script>
+    <style>
+      body {
+        background-color: black;
+      }
 
-  h1 {
-    color: red;
-    margin-left: 0px;
-    font-size: 50px;
-    text-align: center;
-  } 
+      h1 {
+        color: red;
+        margin-left: 0px;
+        font-size: 50px;
+        text-align: center;
+      }
 
-  p {
-    color: red;
-    margin-left: 0px;
-    font-size: 25px;
-    text-align: center;
-  } 
+      p {
+        color: red;
+        margin-left: 0px;
+        font-size: 25px;
+        text-align: center;
+      }
 
-  form {
-    color: red;
-    margin-left: 0px;
-    font-size: 20px;
-    text-align: center;
-  } 
+      .p2 {
+        color: rgb(0, 38, 255);
+        margin-left: 0px;
+        font-size: 25px;
+        text-align: center;
+      }
 
-  a {
-    color: green;
-    margin-left: 0px;
-    font-size: 25px;
-  } 
+      .p3 {
+        text-align: right;
+      }
 
-  </style>
-  <title>BUBEMEDIA</title>
-</head>
-<body>
-  <h1>Welcome to bubemedia!</h1>
-  <p>Trust us with all your tech needs<br>Sign up today:</p>
-  <form>
-    <label for="fname">First name:</label><br>
-    <input type="text" id="fname" name="fname" placeholder="Jagmeet" required><br>
-    <label for="lname">Last name:</label><br>
-    <input type="text" id="lname" name="lname" placeholder="Singh" required><br><br>
-    <label for="phone">Enter a phone number:</label><br>
-    <input type="tel" id="phone" name="phone" placeholder="123-45-678" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required><br><br>
-    <label for="country">Country:</label>
-    <select id="country" name="country">
-      <option value="Rwanda">Rwanda</option>
-      <option value="DPRK">DPRK</option>
-      <option value="Yemen">Yemen</option>
-      <option value="Lybia">Lybia</option>
-    </select><br><br>
-    <button type="submit" onclick="alert('Submitted to FBI')">Submit</button>
-  </form>
-  <a href="page1.html">Clickherenovirusgaranteed.exe</a>
-  <br>
-  <img src="images/call22.jpg" alt="Italian Trulli">
-</body>
+      form {
+        color: red;
+        margin-left: 0px;
+        font-size: 20px;
+        text-align: center;
+      }
+
+      a {
+        color: green;
+        margin-left: 0px;
+        font-size: 25px;
+      }
+    </style>
+    <title>BUBEMEDIA</title>
+  </head>
+  <body>
+    <h1>Welcome to bubemedia!</h1>
+    <p>Trust us with all your tech needs<br />Sign up today: <br> <img align="center" id=techsupport src="images/call22.jpg" alt="Italian Trulli" /></p>
+    <form>
+      <label for="fname">First name:</label><br />
+      <input
+        type="text"
+        id="fname"
+        name="fname"
+        placeholder="Jagmeet"
+        required
+      /><br />
+      <label for="lname">Last name:</label><br />
+      <input
+        type="text"
+        id="lname"
+        name="lname"
+        placeholder="Singh"
+        required
+      /><br /><br />
+      <label for="phone">Enter a phone number:</label><br />
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        placeholder="123-45-678"
+        pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+      /><br /><br />
+      <label for="country">Country:</label>
+      <select id="country" name="country">
+        <option value="Rwanda">Rwanda</option>
+        <option value="DPRK">DPRK</option>
+        <option value="Yemen">Yemen</option>
+        <option value="Lybia">Lybia</option></select
+      ><br /><br />
+      <button onclick="alertbutton()">Submit</button>
+    </form>
+    <p>
+      <br />
+      <button onclick="displayMessage()">Click to encrypt message below</button>
+    </p>
+    <p clas s="p2" , id="p2">hello</p>
+    <button onclick="toggle()">Click Me</button>
+    <br />
+    <p3 id="p3"><a href="page1.html">Clickherenovirusgaranteed.exe</a></p3>
+    <br />
+    <button onclick="changeSrc()">Face reveal</button>
+  </body>
 </html>
