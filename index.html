@@ -22,6 +22,15 @@
       function changeSrc() {
         document.getElementById("techsupport").src = "images/hacker.jpg";
       }
+      function changeText(elem) {
+        elem.innerHTML = "Hello World";
+      }
+      function fieldRequired() {
+        let x = document.getElementById("fname");
+        if (x.value == "") {
+          x.value = "This field is required";
+        }
+      }
     </script>
     <style>
       body {
@@ -70,16 +79,18 @@
   </head>
   <body>
     <h1>Welcome to bubemedia!</h1>
-    <p>Trust us with all your tech needs<br />Sign up today: <br> <img align="center" id=techsupport src="images/call22.jpg" alt="Italian Trulli" /></p>
+    <p>
+      Trust us with all your tech needs<br />Sign up today: <br />
+      <img
+        align="center"
+        id="techsupport"
+        src="images/call22.jpg"
+        alt="Italian Trulli"
+      />
+    </p>
     <form>
       <label for="fname">First name:</label><br />
-      <input
-        type="text"
-        id="fname"
-        name="fname"
-        placeholder="Jagmeet"
-        required
-      /><br />
+      <input type="text" id="fname" onblur="fieldRequired()" /><br />
       <label for="lname">Last name:</label><br />
       <input
         type="text"
@@ -109,11 +120,12 @@
       <br />
       <button onclick="displayMessage()">Click to encrypt message below</button>
     </p>
-    <p clas s="p2" , id="p2">hello</p>
+    <p class="p2" , id="p2">hello</p>
     <button onclick="toggle()">Click Me</button>
     <br />
     <p3 id="p3"><a href="page1.html">Clickherenovirusgaranteed.exe</a></p3>
     <br />
     <button onclick="changeSrc()">Face reveal</button>
+    <button onclick="changeText(this)">Hello</button>
   </body>
 </html>
