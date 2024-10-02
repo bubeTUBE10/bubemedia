@@ -4,7 +4,7 @@
 
 <head>
 
-<title>Embed PHP in a .html File</title>
+<title></title>
 
 </head>
 
