@@ -18,7 +18,7 @@
             die("Connection failed: " . mysqli_connect_error());
         }
 
-        $sql = "select hp from courses where brand='{$brand}';";
+        $sql = "select hp from cars where brand='{$brand}';";
         $result = mysqli_query($conn, $sql);
         ?>
 
