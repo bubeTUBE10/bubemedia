@@ -26,7 +26,7 @@
     <?php
         foreach ($result as $row) // There should only be one row returned
         {
-            echo "{$row['brand']} has {$row['hp']} horsepower.";
+            echo "{$row['brand']} {$row['make']} has {$row['hp']} horsepower.";
         }
         // Don't forget to close the connection!
         mysqli_close($conn);
