@@ -20,13 +20,14 @@
         ?>
     </head>
     <body>
-        You  <?= $brand ?>.<br/>
+        You selected brand: <?= $brand ?>.<br/>
         <?php
-        foreach ($result as $row) // There should only be one row returned
-        {
-            echo "{$row['brand']} has {$row['hp']} horsepower.";
-        }
+      //  foreach ($result as $row) // There should only be one row returned
+      //  {
+     //       echo "{$row['brand']} has {$row['hp']} horsepower.";
+       // }
         // Don't forget to close the connection!
+        foreach($result as $row) { echo "id: {$row["id"]} | Car: {$row["brand"]} {$row["make"]}\n"; }
         mysqli_close($conn);
         ?>
     </body>
