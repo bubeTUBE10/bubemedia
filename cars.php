@@ -15,15 +15,15 @@
             if (!$conn) {
               die("Connection failed: {mysqli_connect_error()}");
             }
-            $sql = "select * from courses;";
+            $sql = "select * from cars;";
             $result = mysqli_query($conn, $sql);
         ?>
-    </head>
+</head>
 
 </p>
 <form action="sql2.php" method="get">
   <label for="brand">brand:</label><br />
-  <select id="courses" name="courses">
+  <select id="cars" name="cars">
                 <?php
                     foreach($result as $row) 
                     {
