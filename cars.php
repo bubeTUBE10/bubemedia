@@ -23,7 +23,7 @@
 </p>
 <form action="sql2.php" method="get">
   <label for="brand">brand:</label><br />
-  <select id="cars" name="cars">
+  <select id="brand" name="brand">
                 <?php
                     foreach($result as $row) 
                     {
