@@ -26,9 +26,12 @@
     <?php
         foreach ($result as $row) // There should only be one row returned
         {
-            echo "{$row['brand']} {$row['make']} has {$row['hp']} horsepower.";
+            if ($row['brand'] == $brand) {
+                echo "{$row['brand']} {$row['make']} has {$row['hp']} horsepower.";
+                break; // Stop the loop once the specific row is found
+            }
         }
-        // Don't forget to close the connection!
+        // Don't forget to close the connection!SS
         mysqli_close($conn);
     ?>
 
