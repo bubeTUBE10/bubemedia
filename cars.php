@@ -8,7 +8,7 @@
             $server = "localhost";
             $username = "php";
             $password = "hello";
-            $database = "testdb";
+            $database = "bubemedia";
             $conn = mysqli_connect($server, $username, $password, $database);
             
             // Check for successful connection
