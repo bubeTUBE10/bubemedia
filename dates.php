@@ -22,6 +22,7 @@
 
 </p>
 <form action="sql.php" method="get">
+
   <label for="year">Year:</label><br />
   <select id="year" name="year" onchange="fetchMonths()">
     <option value="">Select Year</option>
@@ -36,6 +37,12 @@
   <select id="month" name="month">
     <option value="">Select Month</option>
     <!-- Months will be populated dynamically based on the selected year -->
+  </select><br />
+
+  <label for="day">Day:</label><br />
+  <select id="day" name="day">
+    <option value="">Select Day</option>
+    <!-- Days will be populated dynamically based on the selected year -->
   </select><br />
 
   <input type="submit" value="Submit">
@@ -54,5 +61,20 @@
     xhr.send();
   }
 </script>
+
+<script>
+  function fetchDays() {
+    var year = document.getElementById("month").value;
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "get_days.php?month=" + month, true);
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState == 4 && xhr.status == 200) {
+        document.getElementById("day").innerHTML = xhr.responseText;
+      }
+    };
+    xhr.send();
+  }
+</script>
+
 <p>
 </html>
