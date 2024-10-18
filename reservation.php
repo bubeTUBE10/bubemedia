@@ -4,7 +4,9 @@
 <head>
         <title>SQL test</title>
         <?php
-            $brand = htmlspecialchars($_GET["brand"]);
+            $day = htmlspecialchars($_GET["day"]);
+            $month = htmlspecialchars($_GET["month"]);
+            $year = htmlspecialchars($_GET["year"]);
             $server = "localhost";
             $username = "php";
             $password = "hello";
