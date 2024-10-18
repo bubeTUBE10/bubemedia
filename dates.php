@@ -60,13 +60,12 @@
     };
     xhr.send();
   }
-</script>
-
-<script>
+  
   function fetchDays() {
+    var year = document.getElementById("year").value;
     var month = document.getElementById("month").value;
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "get_days.php?month=" + month, true);
+    xhr.open("GET", "get_days.php?year=" + year + "&month=" + month, true);
     xhr.onreadystatechange = function() {
       if (xhr.readyState == 4 && xhr.status == 200) {
         document.getElementById("day").innerHTML = xhr.responseText;
@@ -74,6 +73,7 @@
     };
     xhr.send();
   }
+
 </script>
 
 <p>

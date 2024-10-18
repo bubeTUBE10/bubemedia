@@ -1,24 +1,17 @@
 <?php
 // Database connection
-include('db_connection.php'); // Adjust as necessary
+include('db_connection.php');
 
+$year = isset($_GET['year']) ? intval($_GET['year']) : 0;
 $month = isset($_GET['month']) ? intval($_GET['month']) : 0;
 
-if ($month) {
-    // Query to get days for the selected month
-    $query = "SELECT DISTINCT day FROM date_times WHERE month = $month ORDER BY day";
-    $result = mysqli_query($conn, $query);
+if ($year && $month) {
+    // Calculate the number of days in the given month and year
+    $days_in_month = cal_days_in_month(CAL_GREGORIAN, $month, $year);
     
-    // Create the month options
-    if (mysqli_num_rows($result) > 0) {
-        while($row = mysqli_fetch_assoc($result)) {
-            echo "<option value='{$row['day']}'>{$row['day']}</option>\n";
-        }
-    } else {
-        echo "<option value=''>No days available</option>\n";
+    // Generate the day options
+    for ($day = 1; $day <= $days_in_month; $day++) {
+        echo "<option value='{$day}'>{$day}</option>\n";
     }
-    
-    // Close connection
-    mysqli_close($conn);
 }
 ?>
