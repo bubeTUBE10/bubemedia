@@ -17,7 +17,7 @@
             if (!$conn) {
               die("Connection failed: {mysqli_connect_error()}");
             }
-            $sql = "INSERT INTO taken_times (year, month, day) VALUES ($year, $month, $day);";
+            $sql = "INSERT INTO taken_times (year, month, day) VALUES ($year, $month, $day)";
             $result = mysqli_query($conn, $sql);
         ?>
 </head>
