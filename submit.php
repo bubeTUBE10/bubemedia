@@ -18,7 +18,6 @@
               die("Connection failed: {mysqli_connect_error()}");
             }
             $sql = "INSERT INTO taken_times (year, month, day) VALUES ($year, $month, $day)";
-            $result = mysqli_query($conn, $sql);
         ?>
 </head>
 
@@ -26,9 +25,11 @@
     You selected day <?= $day ?>.<br/>
 
     <?php
-        echo $result ? "Success!" : "Failure: {mysqli_error($conn)}";
-        // Don't forget to close the connection!
-        mysqli_close($conn);
+        if ($conn->query($sql) === TRUE) {
+        echo "New record created successfully";
+        } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+        }
     ?>
 
     </body>
