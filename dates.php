@@ -64,7 +64,7 @@
 
 <script>
   function fetchDays() {
-    var year = document.getElementById("month").value;
+    var month = document.getElementById("month").value;
     var xhr = new XMLHttpRequest();
     xhr.open("GET", "get_days.php?month=" + month, true);
     xhr.onreadystatechange = function() {
