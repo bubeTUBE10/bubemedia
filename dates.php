@@ -34,9 +34,13 @@
   </select><br />
 
   <label for="month">Month:</label><br />
-  <select id="month" name="month">
+  <select id="month" name="month" onchange="fetchMonths()">
     <option value="">Select Month</option>
-    <!-- Months will be populated dynamically based on the selected year -->
+    <?php
+      foreach($result as $row) {
+        echo "<option value='{$row['month']}'>{$row['month']}</option>\n";
+      }
+    ?>
   </select><br />
 
   <label for="day">Day:</label><br />
