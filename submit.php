@@ -24,7 +24,7 @@
         die("Connection failed: " . mysqli_connect_error());
     }
 
-    $stmt = $conn->prepare("INSERT INTO reserved_times (year, month, day) VALUES (?, ?, ?)");
+    $stmt = $conn->prepare("INSERT INTO reserved_times (year, month, day) VALUES ($year, $month, $year)");
     $stmt->bind_param("iii", $year, $month, $day);
     ?>
 
