@@ -21,7 +21,7 @@
 </head>
 
 </p>
-<form action="reservation.php" method="get">
+<form action="submit.php" method="get">
   <label for="year">Year:</label><br />
   <select id="year" name="year" disabled>
     <option value="2024">2024</option>

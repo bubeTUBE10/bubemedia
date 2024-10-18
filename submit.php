@@ -17,7 +17,7 @@
             if (!$conn) {
               die("Connection failed: {mysqli_connect_error()}");
             }
-            $sql = "select * from date_times;";
+            $sql = "INSERT INTO taken_times (year, month, day) VALUES ($year, $month, $day);";
             $result = mysqli_query($conn, $sql);
         ?>
 </head>
@@ -26,14 +26,7 @@
     You selected day <?= $day ?>.<br/>
 
     <?php
-        foreach ($result as $row) // There should only be one row returned
-        {
-            if ($row['day'] == $day) {
-                echo "Year:{$row['year']} Month:{$row['month']} Day:{$row['day']}";
-                break; // Stop the loop once the specific row is found
-            }
-        }
-
+        echo $result ? "Success!" : "Failure: {mysqli_error($conn)}";
         // Don't forget to close the connection!
         mysqli_close($conn);
     ?>
