@@ -2,24 +2,16 @@
 // Database connection
 include('db_connection.php');
 
-$year = isset($_GET['year']) ? intval($_GET['year']) : 0;
+$year = 2024;  // Fixed to year 2024
 $month = isset($_GET['month']) ? intval($_GET['month']) : 0;
 
 if ($year && $month) {
-    // Query to get months for the selected year
-    $query = "SELECT DISTINCT day FROM date_times WHERE month = $month ORDER BY day";
-    $result = mysqli_query($conn, $query);
+    // Calculate the number of days in the given month of 2024
+    $days_in_month = cal_days_in_month(CAL_GREGORIAN, $month, $year);
     
-    // Create the month options
-    if (mysqli_num_rows($result) > 0) {
-        while($row = mysqli_fetch_assoc($result)) {
-            echo "<option value='{$row['day']}'>{$row['day']}</option>\n";
-        }
-    } else {
-        echo "<option value=''>No days available</option>\n";
+    // Generate the day options
+    for ($day = 1; $day <= $days_in_month; $day++) {
+        echo "<option value='{$day}'>{$day}</option>\n";
     }
-    
-    // Close connection
-    mysqli_close($conn);
 }
 ?>
