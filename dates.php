@@ -23,14 +23,10 @@
 </p>
 <form action="sql.php" method="get">
 
-  <label for="month">Month:</label><br />
-  <select id="month" name="month" onchange="fetchMonths()">
+<label for="month">Month:</label><br />
+  <select id="month" name="month" onchange="fetchDays()">
     <option value="">Select Month</option>
-    <?php
-      foreach($result as $row) {
-        echo "<option value='{$row['month']}'>{$row['month']}</option>\n";
-      }
-    ?>
+    <!-- Months will be populated dynamically based on the selected year -->
   </select><br />
 
 
@@ -38,6 +34,18 @@
 </form>
 
 <script>
+    function fetchMonths() {
+    var year = 2024;
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "get_months.php?year=" + year, true);
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState == 4 && xhr.status == 200) {
+        document.getElementById("month").innerHTML = xhr.responseText;
+        document.getElementById("day").innerHTML = "<option value=''>Select Day</option>"; // Reset days when year is changed
+      }
+    };
+    xhr.send();
+  }
 </script>
 
 <p>
