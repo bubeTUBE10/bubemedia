@@ -29,11 +29,11 @@
         foreach ($result as $row) // There should only be one row returned
         {
             if ($row['day'] == $day) {
-                echo "{$row['year']} {$row['month']} {$row['day']}";
+                echo "Year:{$row['year']} Month:{$row['month']} Day:{$row['day']}";
                 break; // Stop the loop once the specific row is found
             }
         }
-        // Don't forget to close the connection!SS
+        // Don't forget to close the connection!
         mysqli_close($conn);
     ?>
 
