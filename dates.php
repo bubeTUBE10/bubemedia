@@ -23,16 +23,6 @@
 </p>
 <form action="sql.php" method="get">
 
-  <label for="year">Year:</label><br />
-  <select id="year" name="year" onchange="fetchMonths()">
-    <option value="">Select Year</option>
-    <?php
-      foreach($result as $row) {
-        echo "<option value='{$row['year']}'>{$row['year']}</option>\n";
-      }
-    ?>
-  </select><br />
-
   <label for="month">Month:</label><br />
   <select id="month" name="month" onchange="fetchMonths()">
     <option value="">Select Month</option>
@@ -43,41 +33,11 @@
     ?>
   </select><br />
 
-  <label for="day">Day:</label><br />
-  <select id="day" name="day">
-    <option value="">Select Day</option>
-    <!-- Days will be populated dynamically based on the selected year -->
-  </select><br />
 
   <input type="submit" value="Submit">
 </form>
 
 <script>
-  function fetchMonths() {
-    var year = document.getElementById("year").value;
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", "get_months.php?year=" + year, true);
-    xhr.onreadystatechange = function() {
-      if (xhr.readyState == 4 && xhr.status == 200) {
-        document.getElementById("month").innerHTML = xhr.responseText;
-      }
-    };
-    xhr.send();
-  }
-  
-  function fetchDays() {
-    var year = document.getElementById("year").value;
-    var month = document.getElementById("month").value;
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", "get_days.php?year=" + year + "&month=" + month, true);
-    xhr.onreadystatechange = function() {
-      if (xhr.readyState == 4 && xhr.status == 200) {
-        document.getElementById("day").innerHTML = xhr.responseText;
-      }
-    };
-    xhr.send();
-  }
-
 </script>
 
 <p>
