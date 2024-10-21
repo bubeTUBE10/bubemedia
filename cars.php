@@ -21,7 +21,7 @@
 </head>
 
 </p>
-<form action="sql.php" method="get">
+<form action="sql2.php" method="get">
   <label for="brand">brand:</label><br />
   <select id="brand" name="brand">
                 <?php

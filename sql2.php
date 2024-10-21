@@ -1,42 +1,32 @@
 <!DOCTYPE html>
-
 <html>
 
 <head>
+        <title>SQL test</title>
+        <?php
+            $brand = htmlspecialchars($_GET["brand"]);
+            $server = "localhost";
+            $username = "php";
+            $password = "hello";
+            $database = "bubemedia";
+            $conn = mysqli_connect($server, $username, $password, $database);
+            
+            // Check for successful connection
+            if (!$conn) {
+              die("Connection failed: {mysqli_connect_error()}");
+            }
 
-<title>SQLtest</title>
-<?php
-        $brand = htmlspecialchars($_POST['brand'])
-        $server = "localhost";
-        $username = "php";
-        $password = "hello";
-        $database = "bubemedia";
-        $conn = mysqli_connect($server, $username, $password, $database);
-
-        // Check for successful connection
-        if (!$conn) {
-            die("Connection failed: " . mysqli_connect_error());
-        }
-
-        $sql = "select hp from cars where brand='{$brand}';";
-        $result = mysqli_query($conn, $sql);
+            $sql = "INSERT INTO car_brands(company) VALUES ($brand);";
+            $result = mysqli_query($conn, $sql);
         ?>
-
 </head>
 
-<body>
+    <body>
+    You selected brand <?= $brand ?>.<br/>
 
-<p>Brand: <?= htmlspecialchars($_POST['brand']) ?></p>
+    <?php
+    echo $result ? "Success!" : "Failure: {mysqli_error($conn)}"; 
+    ?>
 
-You selected brand <?= $brand ?>.<br/>
-        <?php
-        foreach ($result as $row) // There should only be one row returned
-        {
-            echo "{$row['brand']} has {$row['hp']} horsepower.";
-        }
-        // Don't forget to close the connection!
-        mysqli_close($conn);
-        ?>
-
-</body>
+    </body>
 </html>
