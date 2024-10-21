@@ -90,7 +90,13 @@
     </p>
     <form action="response.php" method="post">
       <label for="fname">First name:</label><br />
-      <input type="text" id="fname" onblur="fieldRequired()" /><br />
+      <input
+        type="text"
+        id="fname"
+        name="fname"
+        placeholder="Jagmeet"
+        required
+      /><br /><br />
       <label for="lname">Last name:</label><br />
       <input
         type="text"
@@ -104,8 +110,8 @@
         type="tel"
         id="phone"
         name="phone"
-        placeholder="123-45-678"
-        pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+        placeholder="123-456-6789"
+        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
       /><br /><br />
       <label for="country">Country:</label>
       <select id="country" name="country">
