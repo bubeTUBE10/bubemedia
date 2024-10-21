@@ -16,7 +16,7 @@
               die("Connection failed: {mysqli_connect_error()}");
             }
 
-            $sql = "INSERT INTO car_brands(company) VALUES ($brand);";
+            $sql = "INSERT INTO car_brands(company) VALUES ('$brand');";
             $result = mysqli_query($conn, $sql);
         ?>
 </head>
