@@ -20,7 +20,7 @@
         }
 
         // Prepare and execute the SQL query
-        $sql = "INSERT INTO index_form(fname, lname, phone, country) VALUES ('$fname', '$lname', '$phone', '$country');";  // Ensure the variable is properly quoted
+        $sql = "INSERT INTO index_form(fname, lname, phone, country) VALUES ('$fname', '$lname', '$phone', '$country');"; 
         $result = mysqli_query($conn, $sql);
     ?>
 </head>

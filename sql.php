@@ -2,7 +2,7 @@
 <html>
 
 <head>
-        <title>SQL test</title>
+        <title></title>
         <?php
             $brand = htmlspecialchars($_GET["brand"]);
             $server = "localhost";
