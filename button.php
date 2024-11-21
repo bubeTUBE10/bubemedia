@@ -4,7 +4,7 @@
 <head>
     <title></title>
     <?php
-        $output = gpio write 7 0;
+        $output = shell_exec("gpio write 7 0");
     ?>
 </head>
 
