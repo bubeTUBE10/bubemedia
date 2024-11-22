@@ -4,7 +4,7 @@
 <head>
     <title></title>
     <?php
-        $output = shell_exec("python /home/bube/lcd/lcd2.py");
+        $output = shell_exec("/usr/bin/python /home/bube/lcd/lcd2.py");
     ?>
 </head>
 
